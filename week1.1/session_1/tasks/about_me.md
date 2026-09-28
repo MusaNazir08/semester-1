@@ -13,3 +13,6 @@ I have used TS and HTMl to code many websites, 2 of which are being finalised an
 A link to one of my partially finished websites can be found [here](https://photographybymusa.netlify.app)
 
 Outside of coding I enjoy photgraphy, rock climbing, going to the gym, hiking, cycling and gaming.
+
+This is my favourite picture:
+![myfavpic](QE4A9746.JPG)
