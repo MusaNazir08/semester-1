@@ -5,8 +5,17 @@
 - Only print the final answer when the calculation succeeds.
 """
 
-numerator_input = input("Enter the numerator: ")
-denominator_input = input("Enter the denominator: ")
+try:    
+    numerator_input = int(input("Enter the numerator: "))
+    denominator_input = int(input("Enter the denominator: "))
+except ValueError:
+    print("Only integer values allowed")
+
+try:
+    print(numerator_input/denominator_input)
+except ZeroDivisionError:
+    print("Cannot divide by 0")
+
 
 # TODO: wrap the risky operations in a try/except block
 # TODO: convert the values to integers and perform the division

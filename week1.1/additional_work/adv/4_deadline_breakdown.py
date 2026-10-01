@@ -5,9 +5,16 @@
 - Extension: handle negative input by printing a warning that the deadline has already passed.
 """
 
-minutes_remaining_input = input("Minutes remaining until the deadline: ")
+minutes_remaining_input = int(input("Minutes remaining until the deadline: "))
+days = minutes_remaining_input//1440
+leftover = minutes_remaining_input - (days*1440)
+hours = leftover//60
+mins = leftover - (hours*60)
+
+print(f"{days} days, {hours} hours, {mins} minute(s) remaning")
 
 # TODO: convert the input to an integer
 # TODO: calculate whole days, leftover hours, and remaining minutes
 # TODO: print the breakdown using f-strings
 # Extension: detect negative values and print a warning instead
+#923759

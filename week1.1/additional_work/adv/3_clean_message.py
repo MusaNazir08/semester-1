@@ -6,6 +6,20 @@
 """
 
 raw_message = input("Type a message to tidy: ")
+raw_message = raw_message.lower()
+msgList = raw_message.split()
+
+for x in range (0, len(msgList)):
+    if x == 0:
+        word = msgList[x].title()
+        cleaned_message = word
+    elif msgList[x] == "i":
+        cleaned_message = cleaned_message + " I"
+    else:
+        word = msgList[x]
+        cleaned_message = cleaned_message + " " + word
+
+print(cleaned_message)
 
 # TODO: apply a sequence of string methods to produce a cleaned_message
 # Example methods: strip, title, replace, lower, upper
