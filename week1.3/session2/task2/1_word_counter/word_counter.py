@@ -4,7 +4,14 @@
 # You can use any of the .txt files to test this - or even make your own.
 
 # open and read the file
-
+with open("/workspaces/semester-1/week1.3/session2/task2/1_word_counter/story.txt", "r") as f:
+    lst = f.readlines()
+    lst2 = []
+    for x in lst:
+        words = x.strip().split()
+        if words != []:
+            lst2.append(words)
+    print(len([j for sub in lst2 for j in sub]))
 # calculate the number of words
 # hint: you could use .split() to break up by spaces
 # hint: watch out for empty lines that might give you empty strings
