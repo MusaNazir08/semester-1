@@ -3,12 +3,39 @@
 # Your code for the overall grade classification
 
 # ask for filename of the student file
-
+filename = input("Enter filename: ")
 # open the file
-
+f = open("/workspaces/semester-1/week1.3/worksheet/task3/"+filename + ".csv","r")
+output = open("/workspaces/semester-1/week1.3/worksheet/task3/"+filename+"_out.csv","w")
+f.readline()
 # read in the data, and for each student calculate their average grade and classification
+for line in f:
+    data = line.strip().split(",")
 
+    student_id = data[0]
+    grades = []
 
+    for grade in data[1:]:
+        if grade != "":
+            grades.append(float(grade))
+
+    average_grade = sum(grades)/len(grades)
+
+    if average_grade >= 70:
+        classification = "1"
+    elif average_grade >= 60:
+        classification = "2:1"
+    elif average_grade >= 50:
+        classification = "2:2"
+    elif average_grade >= 40:
+        classification = "3"
+    else:
+        classification = "F"
+
+    output.write(f"{student_id},{average_grade:.2f},{classification}\n")
+
+f.close()
+output.close()
 
 # write out this calculated data in the format without a header:
 #      student_id,average_grade,classification - replace this with actual value
